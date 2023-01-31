@@ -1,0 +1,30 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Bus
+class Car
+class GAZelle
+class GermanFactory
+class LadaGranta
+class Main
+class MercedesGLC
+class MercedesSprinter
+class RussianFactory
+class VehicleFactory
+
+GAZelle           -[#000082,plain]-^  Bus              
+GermanFactory     -[#595959,dashed]->  MercedesGLC      : "«create»"
+GermanFactory     -[#595959,dashed]->  MercedesSprinter : "«create»"
+GermanFactory     -[#000082,plain]-^  VehicleFactory   
+LadaGranta        -[#000082,plain]-^  Car              
+Main              -[#595959,dashed]->  GermanFactory    : "«create»"
+Main              -[#595959,dashed]->  RussianFactory   : "«create»"
+MercedesGLC       -[#000082,plain]-^  Car              
+MercedesSprinter  -[#000082,plain]-^  Bus              
+RussianFactory    -[#595959,dashed]->  GAZelle          : "«create»"
+RussianFactory    -[#595959,dashed]->  LadaGranta       : "«create»"
+RussianFactory    -[#000082,plain]-^  VehicleFactory   
+@enduml
